@@ -1,0 +1,9 @@
+{% extends "app/base.html" %}
+{% block content %}
+    {% for result in results %}
+        <article class="media content-section">
+          <img class="rounded float-left" src="{{ result.image.url }}">
+
+        </article>
+    {% endfor %}
+{% endblock content %}
