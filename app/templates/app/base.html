@@ -17,7 +17,7 @@
     <body>
     <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content" role="main">
         <div class="container">
-            <h1 class="bd-title" id="content">Image Search</h1>
+            <h1 class="bd-title" id="content">{% block page_header %}Image Search{% endblock %}</h1>
 
             {% if messages %}
                 {% for message in messages %}
@@ -35,16 +35,19 @@
             {% endif %}
 
                 {% block content %}
-
+                <div class="content-section">
+                    <p>You can upload photos and our service will select similar photos.</p>
                     <form enctype="multipart/form-data" action="{% url 'app:upload' %}" method="post" class="bd-example d-flex align-items-center">
-                        <fieldset>
+                        <fieldset class="form-group">
                             <legend>{% trans 'Upload Your Image' %}</legend>
                             {% csrf_token %}
                             {{ form.as_p }}
-                            <p><input type="submit" value="Upload image" /></p>
+                            <div class="form-group">
+                                <p><input type="submit" value="Upload image" /></p>
+                            </div>
                         </fieldset>
                     </form>
-
+                </div>
                 {% endblock %}
 
 
