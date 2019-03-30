@@ -1,6 +1,5 @@
 from django.urls import path
 from .views import PhotoUploadView, SearchResultsView
-from . import views
 
 app_name = 'app'
 
